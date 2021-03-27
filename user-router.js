@@ -1,18 +1,11 @@
 const router = require('express').Router();
-router.get('/', (req, res)=>{
-  // get all todos
-  res.send("Was machen die Kieler? Ja schlafen die denn?");
-})
+const userController = require('./controller/user.controller');
 
-router.get('/:id', (req, res) => {
-  // get todo by id 
-  console.log(req.params.id)
-  res.send(`Granate und ${req.params.id}!!!!`)
-});
+router.get('/', userController.getAll);
 
-router.post('/',(req, res) => {
-  res.send("post from user")
-})
+router.get('/:id', userController.findById);
+
+router.post('/', userController.createUser);
 
 router.put('/', (req, res) => {
   res.send('put from user')

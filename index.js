@@ -1,15 +1,13 @@
 const express = require ('express');
 const app = express();
-const router = require ('./router')
+const router = require ('./router');
 const port = 3001;
-const db = require ('./models/index')
+const db = require ('./models/index');
+
 
 
 app.use(express.json()); //bodyparser fuer json
 app.use(router);
-
-
-
 
 
 
